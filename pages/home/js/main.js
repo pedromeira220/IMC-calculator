@@ -1,19 +1,3 @@
-const calculateBMIButton = document.getElementById('calculateBMI-button');
-
-
-
-const controller = {
-    massInput: document.getElementById('mass-input'),
-    heightInput: document.getElementById('height-input'),
-    onCalculateBMIButtonClick() {
-
-        console.log(this.massInput);
-        console.log(this.heightInput);
-        this.bmiValue = model.calculateBMI(this.massInput.value, this.heightInput.value);
-        view.print(model.returnBaseText(this.bmiValue));
-    },
-
-}
 const view = {
     bmiText: document.getElementById('bmi-text'),
     print(text) {
@@ -36,5 +20,3 @@ const myFunction = () => {
 
     view.print(model.returnBaseText(model.calculateBMI(massInput.value, heightInput.value)));
 };
-
-calculateBMIButton.onclick = myFunction;
