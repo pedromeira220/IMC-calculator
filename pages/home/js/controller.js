@@ -1,8 +1,13 @@
 function onCalculateBMIButtonClick() {
 
-    const bmiValue = model.calculateBMI(massInput.value, heightInput.value);
+    const heightValue = parseFloat(heightInput.value / 100); // Kilograms
+    const massValue = parseFloat(massInput.value); // Centimeter
+    //The mass was in centimeters, but was converted to meters
 
-    view.print(model.returnBaseText(bmiValue.toFixed(2)));
+
+    const bmiValue = model.calculateBMI(massValue, heightValue);
+
+    view.print(model.returnBaseText(bmiValue));
 }
 
 function init() {
