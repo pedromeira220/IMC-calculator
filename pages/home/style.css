@@ -1,0 +1,17 @@
+.hide {
+    opacity: 0;
+}
+
+.has-color-info {
+    color: #209cee;
+}
+
+.is-hover:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.fade {
+    opacity: 1;
+    transition: opacity .5s;
+}

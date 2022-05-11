@@ -46,6 +46,8 @@ function init() {
     [...bmiInputs].forEach(element => {
         element.onkeypress = handleOnEnterPress;
     });
+
+    bmiInputs[0].focus();
 }
 
 
