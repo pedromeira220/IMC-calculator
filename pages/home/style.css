@@ -15,3 +15,7 @@
     opacity: 1;
     transition: opacity .5s;
 }
+
+.display-none {
+    display: none;
+}
