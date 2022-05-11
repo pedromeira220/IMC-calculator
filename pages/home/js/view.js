@@ -10,7 +10,7 @@ const view = {
     printError(message, id) {
         document.getElementById(id).textContent = message;
     },
-    showInfoBmiInfoBox() {
+    showBmiInfoBox() {
         document.querySelector(".bmi-info-box").classList.remove("display-none");
     },
 }
