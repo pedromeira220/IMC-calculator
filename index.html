@@ -15,12 +15,14 @@
         <div class="container">
             <div class="columns is-multiline ">
                 <div class="column is-6">
-                    <label class="label">Digite a sua massa(kg)</label>
+                    <label class="label">Digite o seu peso(kg)</label>
                     <input class="input bmiInput" type="number" placeholder="100 (kg)" id="mass-input">
+                    <p class="help is-danger" id="massError"></p>
                 </div>
                 <div class="column is-6">
                     <label class="label">Digite a sua altura (cm)</label>
                     <input class="input bmiInput" type="number" placeholder="200 (cm)" id="height-input">
+                    <p class="help is-danger" id="heightError"></p>
                 </div>
                 <div class="column is-12">
                     <button class="button is-fullwidth is-success title is-5" id="calculateBMI-button">Calcular</button>

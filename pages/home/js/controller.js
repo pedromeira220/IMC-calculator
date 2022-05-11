@@ -1,13 +1,31 @@
 function onCalculateBMIButtonClick() {
 
     const heightValue = parseFloat(heightInput.value / 100); // Kilograms
-    const massValue = parseFloat(massInput.value); // Centimeter
+    const massValue = parseFloat(massInput.value); // Centimeters
     //The mass was in centimeters, but was converted to meters
+    let canCalculateBMI = true;
 
+    if (validateInputs.massInput(massValue) != true) {
+        view.printError(view.massErrorText, model.massErrorId);
+        canCalculateBMI = false;
 
-    const bmiValue = model.calculateBMI(massValue, heightValue);
+    } else {
+        view.printError("", model.massErrorId);
+    }
 
-    view.print(model.returnBaseText(bmiValue));
+    if (validateInputs.heightInput(heightValue) != true) {
+        view.printError(view.heightErrorText, model.heightErrorId);
+        canCalculateBMI = false;
+
+    } else {
+        view.printError("", model.heightErrorId);
+    }
+
+    if (canCalculateBMI) {
+        const bmiValue = model.calculateBMI(massValue, heightValue);
+
+        view.print(model.returnBaseText(bmiValue));
+    }
 }
 
 function handleOnEnterPress(event) {
@@ -20,8 +38,6 @@ function handleOnEnterPress(event) {
     }
 }
 
-
-
 function init() {
     const calculateBMIButton = document.getElementById('calculateBMI-button');
     calculateBMIButton.onclick = onCalculateBMIButtonClick;
@@ -30,4 +46,22 @@ function init() {
     [...bmiInputs].forEach(element => {
         element.onkeypress = handleOnEnterPress;
     });
+}
+
+
+const validateInputs = {
+    heightInput(heightValue) {
+        if (heightValue > 0 && heightValue <= 350) {
+            return true;
+        } else {
+            return false;
+        }
+    },
+    massInput(massValue) {
+        if (massValue > 0 && massValue <= 500) {
+            return true;
+        } else {
+            return false;
+        }
+    },
 }
