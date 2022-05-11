@@ -15,3 +15,8 @@
 .display-none {
     display: none;
 }
+
+#know-more:hover {
+    cursor: pointer;
+    font-weight: bold;
+}
