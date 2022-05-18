@@ -25,7 +25,7 @@ function onCalculateBMIButtonClick() {
         const bmiValue = model.calculateBMI(massValue, heightValue);
 
         view.print(model.returnBaseText(bmiValue));
-        view.showBmiInfoBox();
+        // view.showBmiInfoBox();
     }
 
 
