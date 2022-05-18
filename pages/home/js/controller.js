@@ -1,3 +1,20 @@
+const validateInputs = {
+    heightInput(heightValue) {
+        if (heightValue > 0 && heightValue <= 350) {
+            return true;
+        } else {
+            return false;
+        }
+    },
+    massInput(massValue) {
+        if (massValue > 0 && massValue <= 500) {
+            return true;
+        } else {
+            return false;
+        }
+    },
+}
+
 function onCalculateBMIButtonClick() {
 
     const heightValue = parseFloat(heightInput.value / 100); // Kilograms
@@ -51,22 +68,4 @@ function init() {
     });
 
     bmiInputs[0].focus();
-}
-
-
-const validateInputs = {
-    heightInput(heightValue) {
-        if (heightValue > 0 && heightValue <= 350) {
-            return true;
-        } else {
-            return false;
-        }
-    },
-    massInput(massValue) {
-        if (massValue > 0 && massValue <= 500) {
-            return true;
-        } else {
-            return false;
-        }
-    },
 }
