@@ -68,4 +68,19 @@ function init() {
     });
 
     bmiInputs[0].focus();
+
+
+    const knowMoreButton = document.getElementById("know-more");
+    knowMoreButton.onclick = function() {
+        const bmiInfoBoxBottomTopPosition = document.getElementById('bmiInfoBoxBottom').offsetTop;
+        console.log(bmiInfoBoxBottomTopPosition);
+        scrollToPosition(bmiInfoBoxBottomTopPosition);
+    }
+}
+
+function scrollToPosition(position) {
+    window.scroll({
+        top: position,
+        behavior: "smooth",
+    });
 }
