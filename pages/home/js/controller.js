@@ -1,7 +1,8 @@
 function onCalculateBMIButtonClick() {
 
-    const heightValue = parseFloat(heightInput.value / 100); // Kilograms
-    const massValue = parseFloat(massInput.value); // Centimeters
+    const heightValue = parseFloat(heightInput.value); // Centimeters
+    const massValue = parseFloat(massInput.value); // Kilograms
+
     //The mass was in centimeters, but was converted to meters
     let canCalculateBMI = true;
 
@@ -22,7 +23,7 @@ function onCalculateBMIButtonClick() {
     }
 
     if (canCalculateBMI) {
-        const bmiValue = model.calculateBMI(massValue, heightValue);
+        const bmiValue = model.calculateBMI(massValue, heightValue / 100);
 
         view.print(model.returnBaseText(bmiValue));
         // view.showBmiInfoBox();
@@ -56,7 +57,7 @@ function init() {
 
 const validateInputs = {
     heightInput(heightValue) {
-        if (heightValue > 0 && heightValue <= 350) {
+        if (heightValue > 0 && heightValue <= 300) {
             return true;
         } else {
             return false;
