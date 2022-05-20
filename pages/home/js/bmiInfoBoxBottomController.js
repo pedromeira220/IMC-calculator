@@ -1,7 +1,12 @@
 function bmiInfoBoxBottomController() {
     const bmiInfoBoxBottom = document.getElementById('bmiInfoBoxBottom');
+    const bmiInfoBoxBottomContent = {}
 
     if (model.bmiWasCalculated) {
-        bmiInfoBoxBottom.classList.toggle('display-none');
+        view.showBmiInfoBoxBottom();
     }
+
+
+
+
 }

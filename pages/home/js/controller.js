@@ -40,10 +40,10 @@ function onCalculateBMIButtonClick() {
     }
 
     if (canCalculateBMI) {
-        const bmiValue = model.calculateBMI(massValue, heightValue);
+        model.bmiValue = model.calculateBMI(massValue, heightValue);
         model.bmiWasCalculated = true;
 
-        view.print(model.returnBaseText(bmiValue));
+        view.print(model.returnBaseText(model.bmiValue));
         view.showBmiInfoBox();
 
         bmiInfoBoxBottomController();

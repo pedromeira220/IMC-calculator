@@ -1,4 +1,5 @@
 const model = {
+    bmiValue: 0,
     bmiWasCalculated: false,
     massErrorId: "massError",
     heightErrorId: "heightError",

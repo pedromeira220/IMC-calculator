@@ -13,4 +13,7 @@ const view = {
     showBmiInfoBox() {
         document.querySelector(".bmi-info-box").classList.remove("display-none");
     },
+    showBmiInfoBoxBottom() {
+        document.getElementById("bmiInfoBoxBottom").classList.remove("display-none");
+    }
 }
