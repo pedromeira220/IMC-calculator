@@ -49,6 +49,11 @@ function onCalculateBMIButtonClick() {
 
         view.showBmiInfoBox(model.bmiSituation, model.bmiText);
 
+        const knowMoreButton = document.getElementById("know-more");
+        knowMoreButton.onclick = function() {
+            window.open("https://www.uol.com.br/vivabem/faq/imc-como-calcular-tabela-dicas-como-melhorar-e-mais.htm");
+        }
+
     }
 
 
@@ -75,11 +80,6 @@ function init() {
 
     bmiInputs[0].focus();
 
-
-    /* const knowMoreButton = document.getElementById("know-more");
-    knowMoreButton.onclick = function() {
-        //Go to a page with more information about BMI
-    } */
 }
 
 function scrollToPosition(position) {
