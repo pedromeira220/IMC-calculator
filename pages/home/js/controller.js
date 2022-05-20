@@ -40,9 +40,14 @@ function onCalculateBMIButtonClick() {
 
     if (canCalculateBMI) {
         const bmiValue = model.calculateBMI(massValue, heightValue);
-
+        model.bmiValue = bmiValue;
         view.print(model.returnBaseText(bmiValue));
-        view.showBmiInfoBox(view.bmiInfo.situation, view.bmiInfo.text, "74.0 KG - 99.6 KG");
+
+        const bmiInfo = returnBmiInformation();
+        model.bmiSituation = bmiInfo.situation;
+        model.bmiText = bmiInfo.text;
+
+        view.showBmiInfoBox(model.bmiSituation, model.bmiText);
 
     }
 
@@ -82,4 +87,33 @@ function scrollToPosition(position) {
         top: position,
         behavior: "smooth",
     });
+}
+
+function returnBmiInformation() {
+    const bmiInfo = {
+        situation: "",
+        text: "",
+    }
+
+    if (model.bmiValue < 18.5) {
+        bmiInfo.situation = view.bmiInfo.possiblesSituations.AbaixoDoPeso.title;
+        bmiInfo.text = view.bmiInfo.possiblesSituations.AbaixoDoPeso.text;
+    } else if (model.bmiValue >= 18.5 && model.bmiValue <= 24.9) {
+        bmiInfo.situation = view.bmiInfo.possiblesSituations.Normal.title;
+        bmiInfo.text = view.bmiInfo.possiblesSituations.Normal.text;
+    } else if (model.bmiValue >= 25 && model.bmiValue <= 29.9) {
+        bmiInfo.situation = view.bmiInfo.possiblesSituations.Sobrepeso.title;
+        bmiInfo.text = view.bmiInfo.possiblesSituations.Sobrepeso.text;
+    } else if (model.bmiValue >= 30 && model.bmiValue <= 34.9) {
+        bmiInfo.situation = view.bmiInfo.possiblesSituations.ObesidadeGrau1.title;
+        bmiInfo.text = view.bmiInfo.possiblesSituations.ObesidadeGrau1.text;
+    } else if (model.bmiValue >= 35 && model.bmiValue <= 39.9) {
+        bmiInfo.situation = view.bmiInfo.possiblesSituations.ObesidadeGrau2.title;
+        bmiInfo.text = view.bmiInfo.possiblesSituations.ObesidadeGrau2.text;
+    } else if (model.bmiValue >= 40) {
+        bmiInfo.situation = view.bmiInfo.possiblesSituations.ObesidadeGrau3.title;
+        bmiInfo.text = view.bmiInfo.possiblesSituations.ObesidadeGrau3.text;
+    }
+
+    return bmiInfo;
 }

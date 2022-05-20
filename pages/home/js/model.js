@@ -1,4 +1,5 @@
 const model = {
+    bmiValue: 0,
     massErrorId: "massError",
     heightErrorId: "heightError",
     baseText: "Seu IMC é: ",
@@ -9,5 +10,7 @@ const model = {
         //The mass is in kilograms and the height is in meters
         return (mass) / (height * height);
     },
+    bmiSituation: "Sobrepeso",
+    bmiText: "teste",
 
 }
