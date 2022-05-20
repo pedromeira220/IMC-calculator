@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="./pages/home/style.css">
+    <link rel="icon" type="image/x-icon" href="/assets/bmi.png">
     <title>Calculadora de IMC</title>
 </head>
 
@@ -32,15 +33,203 @@
                     <p class="title is-4 has-text-centered hide" id="bmi-info"><span class="has-color-info is-hover">O que significa?</span></p>
                 </div>
 
+
+                <div class="bmi-info-box"></div>
+
+                <!-- <div class="column is-12 box bmi-info-box display-none">
+                    <p class="title is-3  ">Sobrepeso</p>
+
+                    <p>
+                        Ele é, na verdade, uma pré-obesidade e muitas pessoas nessa faixa já apresentam doenças associadas, como diabetes e hipertensão. Importante rever hábitos e buscar ajuda antes de, por uma série de fatores, entrar na faixa da obesidade pra valer.
+                    </p>
+                    <br>
+                    <p>
+                        <span class="has-text-weight-bold">Peso ideal:</span> 74.0 KG - 99.6 KG
+                    </p>
+                    <br>
+
+                    <p>
+                        <span class="has-text-info title is-5" id="know-more">Mais informação</span>
+                    </p>
+                </div>
+ -->
+
+
+
             </div>
         </div>
     </section>
 
+    <section class="section" style="height: 100vh;">
+        <div class="container">
+            <div class="tile is-ancestor">
+                <div class="tile is-4 is-vertical is-parent">
+                    <div class="tile is-child box" id="what-is-bmi">
+                        <p class="title">
+                            O que é IMC?
+                        </p>
+                        <p>
+                            O índice de massa corporal (IMC) é uma medida internacional usada para calcular se uma pessoa está no peso ideal. Trata-se de um método fácil e rápido para a avaliação do nível de gordura de cada pessoa.
+                        </p>
+                    </div>
+                    <div class="tile is-child box" id="index-considered-ideal">
+                        <p class="title">
+                            Índice considerado ideal
+                        </p>
+                        <p>
+                            Para adultos, um IMC entre 20 e 22 indica a quantidade ideal, saudável de gordura corporal, o que está associado com maior tempo de vida e menor incidência de doenças graves. Coincidentemente, essa relação é o que muitas pessoas consideram ser "o mais
+                            esteticamente atraente".
+                        </p>
+                        <p>
+                            Entretanto, é importante ressaltar que um índice entre 22 e 25 também é considerado um intervalo bastante aceitável, pois está igualmente associado à boa saúde.
+                        </p>
 
+                    </div>
+                </div>
+                <div class="tile is-parent">
+                    <div class="tile is-child box" id="how-to-calculate">
+                        <p class="title">Como calcular</p>
+                        <div>
+                            <p>
+                                O IMC é determinado pela divisão da massa do indivíduo pelo quadrado de sua altura, em que a massa está em quilogramas e a altura em metros.
+                            </p>
+                            <p>
+                                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" style="width: 100%;">
+                                  <mi>IMC</mi> <mo>=</mo>
+                                  <mrow>
+                                    <mfrac>
+                                      <mrow>
+                                        <mi>massa</mi>
+                                    
+                                      </mrow>
+                                      <msup><mi>altura</mi><mn>2</mn></msup>
+                                    </mfrac>
+                                  </mrow>
+                                  
+                                </math>
+                            </p>
+                            <br>
+
+
+
+                            <p class="title is-4">Exemplo de IMC</p>
+
+                            <p>
+                                Para uma pessoa com 100 quilogramas de massa e 2,00 metros de altura, teremos:
+                            </p>
+
+                            <p>
+                                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" style="width: 100%;">
+                                  <mi>IMC</mi> <mo>=</mo>
+                                  <mrow>
+                                    <mfrac>
+                                      <mrow>
+                                        <mi>100</mi>
+                                    
+                                      </mrow>
+                                      <msup><mi>2</mi><mn>2</mn></msup>
+                                    </mfrac>
+                                    <mo>=</mo>
+                                    <mrow>
+                                        <mfrac>
+                                            <mrow>
+
+                                                <mi>100</mi>
+                                            </mrow>
+                                            <mrow>
+
+                                                <mi>4</mi>
+                                            </mrow>
+
+                                        </mfrac>
+                                    </mrow>
+                                    <mo>=</mo>
+                                    <mrow>
+                                        <mtext>25</mtext> 
+                                    </mrow>
+                                  </mrow>
+                                  
+                                </math>
+                            </p>
+
+                            <p class="title is-5">Outro exemplo:</p>
+
+                            <p>
+                                Uma pessoa com 70 quilogramas de massa e 1,75 metros de altura, calculando o IMC obteremos:
+                            </p>
+
+                            <p>
+                                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" style="width: 100%;">
+                                  <mi>IMC</mi> <mo>=</mo>
+                                  <mrow>
+                                    <mfrac>
+                                      <mrow>
+                                        <mi>70</mi>
+                                    
+                                      </mrow>
+                                      <msup><mi>1,75</mi><mn>2</mn></msup>
+                                    </mfrac>
+                                    <mo>=</mo>
+                                    <mrow>
+                                        <mfrac>
+                                            <mrow>
+
+                                                <mi>70</mi>
+                                            </mrow>
+                                            <mrow>
+
+                                                <mi>3,0625</mi>
+                                            </mrow>
+
+                                        </mfrac>
+                                    </mrow>
+                                    <mo>=</mo>
+                                    <mrow>
+                                        <mtext>22.86</mtext> 
+                                    </mrow>
+                                  </mrow>
+                                  
+                                </math>
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+            <div class="tile is-ancestor">
+                <div class="tile is-parent ">
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+    </section>
+
+
+
+    <!--     <a href="https://www.flaticon.com/br/icones-gratis/bmi" title="bmi ícones">Bmi ícones criados por Freepik - Flaticon</a>
+        Colocar no footer
+-->
+    <script src="./pages/home/js/view.js"></script>
     <script src="./pages/home/js/model.js"></script>
     <script src="./pages/home/js/controller.js"></script>
-    <script src="./pages/home/js/view.js"></script>
     <script src="./pages/home/js/main.js"></script>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
 </body>
