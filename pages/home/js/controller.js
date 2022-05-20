@@ -22,6 +22,7 @@ function onCalculateBMIButtonClick() {
     //The mass was in centimeters, but was converted to meters
     let canCalculateBMI = true;
 
+
     if (validateInputs.massInput(massValue) != true) {
         view.printError(view.massErrorText, model.massErrorId);
         canCalculateBMI = false;
@@ -40,9 +41,12 @@ function onCalculateBMIButtonClick() {
 
     if (canCalculateBMI) {
         const bmiValue = model.calculateBMI(massValue, heightValue);
+        model.bmiWasCalculated = true;
 
         view.print(model.returnBaseText(bmiValue));
         view.showBmiInfoBox();
+
+        bmiInfoBoxBottomController();
     }
 
 

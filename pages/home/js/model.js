@@ -1,4 +1,5 @@
 const model = {
+    bmiWasCalculated: false,
     massErrorId: "massError",
     heightErrorId: "heightError",
     baseText: "Seu IMC é: ",
