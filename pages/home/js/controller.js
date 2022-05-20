@@ -72,8 +72,7 @@ function init() {
 
     const knowMoreButton = document.getElementById("know-more");
     knowMoreButton.onclick = function() {
-        const bmiInfoBoxBottomTopPosition = document.getElementById('bmiInfoBoxBottom').offsetTop;
-        scrollToPosition(bmiInfoBoxBottomTopPosition);
+        //Go to a page with more information about BMI
     }
 }
 
