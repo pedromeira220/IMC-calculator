@@ -42,7 +42,7 @@ function onCalculateBMIButtonClick() {
         const bmiValue = model.calculateBMI(massValue, heightValue);
 
         view.print(model.returnBaseText(bmiValue));
-        view.showBmiInfoBox();
+        view.showBmiInfoBox(view.bmiInfo.situation, view.bmiInfo.text, "74.0 KG - 99.6 KG");
 
     }
 
@@ -71,10 +71,10 @@ function init() {
     bmiInputs[0].focus();
 
 
-    const knowMoreButton = document.getElementById("know-more");
+    /* const knowMoreButton = document.getElementById("know-more");
     knowMoreButton.onclick = function() {
         //Go to a page with more information about BMI
-    }
+    } */
 }
 
 function scrollToPosition(position) {
