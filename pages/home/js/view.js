@@ -11,10 +11,11 @@ const view = {
         document.getElementById(id).textContent = message;
     },
     showBmiInfoBox() {
-        document.querySelector(".bmi-info-box").classList.remove("display-none");
+        document.querySelector(".bmi-info-box").classList.add("column is-12 box bmi-info-box");
+        document.querySelector(".bmi-info-box").innerHTML = this.bmiInfoBoxTemplate;
     },
     bmiInfo: {
-        situation: {
+        possiblesSituations: {
             "Normal": {
                 text: "Parabéns, você está com o peso normal. Recomendamos que mantenha hábitos saudáveis em seu dia a dia. Especialistas sugerem ingerir de 4 a 5 porções diárias de frutas, verduras e legumes, além da prática de exercícios físicos - pelo menos 150 minutos semanais."
             },
@@ -32,5 +33,25 @@ const view = {
                 text: "Sinal vermelho! Ao atingir este nível de IMC, o risco de doenças associadas é muito alto. Busque ajuda de um profissional de saúde; não perca tempo."
             }
         }
-    }
+    },
+    bmiInfoBoxTemplate: `
+        
+            <p class="title is-3  ">${this.bmiInfo.situation}}</p>
+
+            <p>
+                ${this.bmiInfo.text}
+            </p>
+            <br>
+            <p>
+                <span class="has-text-weight-bold">Peso ideal:</span> 74.0 KG - 99.6 KG
+            </p>
+            <br>
+
+            <p>
+                <span class="has-text-info title is-5" id="know-more">Mais informação</span>
+            </p>
+        
+    `,
 }
+
+console.log("teste");

@@ -43,6 +43,7 @@ function onCalculateBMIButtonClick() {
 
         view.print(model.returnBaseText(bmiValue));
         view.showBmiInfoBox();
+
     }
 
 
